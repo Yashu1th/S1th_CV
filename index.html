@@ -59,7 +59,12 @@
             Web Developer
           </h1>
 
-          <a href="https://drive.google.com/file/d/1mcnjHWKZtReJGpfV20-s0sxnFeVdeZHd/view?usp=sharing" target="_blank" class="button">Resume</a>
+          <a
+            href="https://drive.google.com/file/d/1i4GkuMSrNWbsFZEO_Q86sFxmmuoNAfiY/view?usp=sharing"
+            target="_blank"
+            class="button"
+            >Resume</a
+          >
         </div>
 
         <div class="home__social">
@@ -172,8 +177,8 @@
             </div>
             <div class="skills__data">
               <div class="skills__names">
-                <i class="bx bxs-paint skills__icon"></i>
-                <span class="skills__name">UI/UX</span>
+                <i class="bx bxl-bootstrap skills__icon"></i>
+                <span class="skills__name">Bootstrap</span>
               </div>
             </div>
             <div class="skills__data">
@@ -252,23 +257,44 @@
         <h2 class="section-title">Contact</h2>
 
         <div class="contact__container bd-grid">
-          <form method="post" action="mailto:yaswanthnarikamali@gmail.com" class="contact__form">
-            <input type="text" placeholder="Name" class="contact__input" />
-            <input type="mail" placeholder="Email" class="contact__input" />
+          <form onsubmit="reset()"
+            method="POST"
+            action="mailto:yaswanthnarikamali@gmail.com"
+            class="contact__form"
+          >
             <input
-              type="textarea"
+              type="text"
+              placeholder="Name"
+              class="contact__input"
+              id="name"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              class="contact__input"
+              id="email"
+            />
+            <textarea
+              type="text"
               placeholder="Message"
               class="contact__input"
               rows="10"
               cols="0"
-            />
-            
+              id="message"
+            ></textarea>
 
-            <input
+            <!-- <input
               type="button"
               value="Send Email"
               class="contact__button button"
-            />
+            /> -->
+            <button
+              class="contact__buttton button"
+              id="btn"
+              style="border: none; float: right"
+            >
+              Send Email
+            </button>
           </form>
         </div>
       </section>
@@ -305,5 +331,22 @@
 
     <!--===== MAIN JS =====-->
     <script src="assets/js/main.js"></script>
+    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      let btn = document.getElementById("btn");
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let message = document.getElementById("message").value;
+        Email.send({
+          SecureToken: "21468242-a4b9-4936-8d52-b8568ca967f8",
+          To: "yaswanthnarikamali@gmail.com",
+          From: email,
+          Subject: "This is the subject",
+          Body: "And this is the body",
+        }).then((message) => alert(message));
+      }); -->
+    </script>
   </body>
 </html>
